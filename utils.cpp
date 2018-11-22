@@ -27,6 +27,7 @@ int leSettings(string str,Mapa&map) {
   }
   if(tokens[0]=="linhas")
   {
+    
     nlinhas=stoi(tokens[1]);
     map.setLinhas(nlinhas);
   }
