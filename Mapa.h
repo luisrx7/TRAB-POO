@@ -1,36 +1,26 @@
 #ifndef MAPA_H
 #define MAPA_H
 
-#ifdef _MSC_VER
-#pragma once
-#endif  // _MSC_VER
-
 #include <vector>
 #include <string>
 #include <iostream>
 #include <sstream>
 #include <fstream>
-#include <algorithm>
 #include <cstdlib>
 #include <sstream>
-#include "Navio.h"
-#include "Celula.h"
+
 
 using namespace std;
 
 class Mapa //serve so para ver; nao altera
 {
-	static int id_mapa;
 	int linhas, colunas;
 
-	vector<vector <Celula>> cells;
-	//vector<Navio *> navios;
-	/*vector<Porto *> portos;
-	vector<Mar *> mares;
-	vector<Terra *> terras;*/
+	vector<char> map;
+
 public:
 	/*___________________Mapa______________________________________________*/
-	Mapa( int linhas0 = 10, int colunas0 = 20);
+	Mapa( int linhas0 = 10, int colunas0 = 20,vector<char> m);
 	//Mapa(vector<string> dados, int linhas0, int colunas0);
 	//~Mapa();
 	/*_________________Configs_______________________*/
@@ -82,6 +72,6 @@ public:
 
 	/*_________________Imprime para teste____________*/
 	string getAsString()const;
-};
+}
 
 #endif

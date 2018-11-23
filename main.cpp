@@ -7,11 +7,14 @@
 #include <string>
 #include <sstream>
 #include <fstream>
-#include <vector>
 #include "Mapa.h"
+#include <vector>
 using namespace std;
 
-vector<char> mapa;
+
+std::vector<char> ajuda;
+
+
 void printmap(vector<char> &arr){
   for(unsigned int i=1;i<arr.size();i++){
     cout << arr.at(i-1);
@@ -24,10 +27,11 @@ void printmap(vector<char> &arr){
 int main (int argc, char **argv) {
 
 
-Mapa map;
 
-leFich("init.txt",&map);
+
+leFich("init.txt");
 cout << map.getAsString() << endl;
+Mapa map(nlinhas,ncols,ajuda);
 
 /*for(int i =0;i<50;i++){
 	mapa.push_back('+');

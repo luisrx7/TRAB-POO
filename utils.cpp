@@ -11,7 +11,7 @@ using namespace std;
 unsigned int ncols,nlinhas,moedas=1000,probpirata=20,preconavio=100,precosoldado=1,precovendpeixe=1,precocompmercad=2,precovendmercad=3,soldadosport=100,probevento=30,probtempestade=30,probsereias=30,probalmaria=20,probmotim=20;
 
 
-int leSettings(string str,Mapa&map) {
+int leSettings(string str) {
   vector<string> tokens;
   static int nx = 0;
   istringstream iss( str );
@@ -27,6 +27,7 @@ int leSettings(string str,Mapa&map) {
   }
   if(tokens[0]=="linhas")
   {
+
     nlinhas=stoi(tokens[1]);
     map.setLinhas(nlinhas);
   }
@@ -36,7 +37,7 @@ int leSettings(string str,Mapa&map) {
    strcpy(char_array, tokens[0].c_str());
 
  for (int i=0; i<tokens[0].length()+1; i++){
-     map.adicionaCell(i,nx,char_array[i]);
+     ajuda.push_back(char_array[i]);
      cout << char_array[i];
     }
     nx++;
@@ -55,11 +56,11 @@ int leSettings(string str,Mapa&map) {
 
 
 
-void leFich(string nomeFich,Mapa &map){
+void leFich(string nomeFich){
   ifstream file(nomeFich);
   string str;
   while (getline(file,str)){
-    leSettings(str, &map);
+    leSettings(str);
     str="";
   }
 

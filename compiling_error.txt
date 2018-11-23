@@ -1,4 +1,20 @@
-C:\Users\Luis Freitas\Desktop\trabpoo\main.cpp:11:18: fatal error: Mapa.h: No such file or directory
- #include "Mapa.h"
-                  ^
-compilation terminated.
+In file included from C:\Users\Luis Freitas\Desktop\trabpoo\main.cpp:10:0:
+C:\Users\Luis Freitas\Desktop\trabpoo\Mapa.h:75:1: error: expected ';' after class definition
+ }
+ ^
+C:\Users\Luis Freitas\Desktop\trabpoo\Mapa.h:23:2: error: default argument missing for parameter 3 of 'Mapa::Mapa(int, int, std::vector<char>)'
+  Mapa( int linhas0 = 10, int colunas0 = 20,vector<char> m);
+  ^~~~
+C:\Users\Luis Freitas\Desktop\trabpoo\main.cpp: In function 'int main(int, char**)':
+C:\Users\Luis Freitas\Desktop\trabpoo\main.cpp:32:9: error: 'map' was not declared in this scope
+ cout << map.getAsString() << endl;
+         ^~~
+C:\Users\Luis Freitas\Desktop\trabpoo\main.cpp:33:10: error: 'nlinhas' was not declared in this scope
+ Mapa map(nlinhas,ncols,ajuda);
+          ^~~~~~~
+C:\Users\Luis Freitas\Desktop\trabpoo\main.cpp:33:18: error: 'ncols' was not declared in this scope
+ Mapa map(nlinhas,ncols,ajuda);
+                  ^~~~~
+C:\Users\Luis Freitas\Desktop\trabpoo\main.cpp:39:10: error: 'mapa' was not declared in this scope
+ printmap(mapa);
+          ^~~~
