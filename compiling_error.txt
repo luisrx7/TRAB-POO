@@ -1,0 +1,4 @@
+C:\Users\Luis Freitas\Desktop\trabpoo\main.cpp:11:18: fatal error: Mapa.h: No such file or directory
+ #include "Mapa.h"
+                  ^
+compilation terminated.
