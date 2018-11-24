@@ -1,4 +1,5 @@
 #include "Mapa.h"
+#include "Celula.h"
 
 /*___________________Mapa______________________________________________*/
 Mapa::Mapa( int linhas0,  int colunas0, vector<char> m):linhas(linhas0), colunas(colunas0)//,map(nullptr)

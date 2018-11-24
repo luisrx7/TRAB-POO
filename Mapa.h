@@ -8,9 +8,12 @@
 #include <fstream>
 #include <cstdlib>
 #include <sstream>
-
-
+#include "Celula.h"
 using namespace std;
+
+class Celula;
+
+
 
 class Mapa //serve so para ver; nao altera
 {
@@ -20,7 +23,7 @@ class Mapa //serve so para ver; nao altera
 
 public:
 	/*___________________Mapa______________________________________________*/
-	Mapa( int linhas0 = 10, int colunas0 = 20,vector<char> m);
+	Mapa( int linhas0 = 10, int colunas0 = 20,std::vector<char> m);
 	//Mapa(vector<string> dados, int linhas0, int colunas0);
 	//~Mapa();
 	/*_________________Configs_______________________*/
