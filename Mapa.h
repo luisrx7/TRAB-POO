@@ -13,17 +13,14 @@ using namespace std;
 
 class Celula;
 
-
-
 class Mapa //serve so para ver; nao altera
 {
 	int linhas, colunas;
-
-	vector<char> map;
+	vector<Celula> grelha;
 
 public:
 	/*___________________Mapa______________________________________________*/
-	Mapa( int linhas0 = 10, int colunas0 = 20,std::vector<char> m);
+	Mapa( int linhas0, int colunas0, vector <char> m);
 	//Mapa(vector<string> dados, int linhas0, int colunas0);
 	//~Mapa();
 	/*_________________Configs_______________________*/
@@ -75,6 +72,6 @@ public:
 
 	/*_________________Imprime para teste____________*/
 	string getAsString()const;
-}
+};
 
 #endif

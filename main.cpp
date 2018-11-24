@@ -9,35 +9,28 @@
 #include <fstream>
 #include "Mapa.h"
 #include <vector>
+#include "Jogador.h"
 using namespace std;
 
 
-std::vector<char> ajuda;
-
-
-void printmap(vector<char> &arr){
-  for(unsigned int i=1;i<arr.size();i++){
-    cout << arr.at(i-1);
-    if(i%10 == 0) cout << endl;
-  }
-}
-
+vector<char> ajuda;
 
 
 int main (int argc, char **argv) {
+Settings defs;
+Jogador p1;
 
-
-
-
-leFich("init.txt");
+leFich("init.txt",defs,p1);
+Mapa map(defs.getLinhas(),defs.getColunas(),ajuda);
 cout << map.getAsString() << endl;
-Mapa map(nlinhas,ncols,ajuda);
+cout << p1.getAsString() << endl;
 
 /*for(int i =0;i<50;i++){
 	mapa.push_back('+');
 }*/
 
-printmap(mapa);
+//printmap(mapa,defs.getColunas());
+//printmap(mapa);
 /*
 vector<string> tokens;
 while(1){

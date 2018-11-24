@@ -10,7 +10,7 @@ colunas 20
 ....++.............b
 ....................
 ....................
-moedas 2000
+moedas 2010
 probpirata 20
 preconavio 100
 precosoldado 1

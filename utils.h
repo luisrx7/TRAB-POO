@@ -1,11 +1,13 @@
-
 #ifndef UTILS_H
 #define UTILS_H
-using namespace std;
-int leSettings(string str);
-int leFich(string nomeFich);
-//void printmap(vector<char> & arr);
 
+#include <vector>
+#include "Settings.h"
+#include "Jogador.h"
+using namespace std;
+
+void printmap(vector<char> &arr);
+vector <char> leFich(string nomeFich,Settings & defs,Jogador & p1);
 
 
 #endif

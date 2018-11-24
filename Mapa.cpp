@@ -4,20 +4,23 @@
 /*___________________Mapa______________________________________________*/
 Mapa::Mapa( int linhas0,  int colunas0, vector<char> m):linhas(linhas0), colunas(colunas0)//,map(nullptr)
 {
-  vector<Celula> mapa;
-
+  linhas = linhas0;
+  Celula *c1;
   int x=0,y=0;
   for(int i=0;i<m.size();i++){
-
-    mapa[i].setCar(m[i]);
-    mapa[i].setY(y));
-    mapa[i].setX(x);
+    c1 = new Celula(-1,-1,'c');
+	  c1->setCaract(m[i]);
+	  c1->setY(y);
+	  c1->setX(x);
+    grelha.push_back(*c1);
+  /*  grelhagrelha[i].setCar(m[i]);
+    grelha[i].setY(y));
+    grelha[i].setX(x);*/
     x++;
     if(x==colunas) {
       x=0;
       y++;
     }
-
   }
 }
 
@@ -47,7 +50,7 @@ void Mapa::setColunas(int colunas0)
 }
 
 char Mapa::getCelula(int x, int y) const {
-	return this->cells[x][y].getCaract();
+	return grelha[x].getCaract();
 }
 char Mapa::getMapPos(int x, int y) const {
 	return 'c'; //[DEBUG] estava isto.. mas é para alterar ((map + x) + y);
@@ -67,16 +70,18 @@ char Mapa::getMapPos(int x, int y) const {
 //	}
 //}
 
-void Mapa::novoVect() {
+/*void Mapa::novoVect() {
 	cells.push_back(vector<Celula>());
 }
+*/
 
+/*
 void Mapa::adicionaCell( int x, int y, char tipo){
 	//Celula celulas = new Celula(x, y,tipo);
 
 	cells[x].push_back(Celula(x, y, tipo));
 }
-
+*/
 /*_________________Posicao___________________________________________*/
 //bool Mapa::estaVazia(const Ponto &posicao) const
 //{
@@ -109,7 +114,7 @@ void Mapa::adicionaCell( int x, int y, char tipo){
 string Mapa::getAsString() const
 {
 	ostringstream oss;
-	oss << "Mapa: " //<< id_mapa
+	oss << "\n" << "Mapa: " //<< id_mapa
 		<< "	dimensao: " << linhas
 		<< " " << colunas
 		<< endl;

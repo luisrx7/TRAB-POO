@@ -1,9 +1,8 @@
-
 #include "Celula.h"
 
 #define LOT 100
 
-Celula::Celula(int x0, int y0, char c0) :x(x0),y(y0), c(c0){
+Celula::Celula(int x0, int y0, char c0):x(x0),y(y0), c(c0){
 	switch (c) {
 	case '.': //mar
     peixe = 1000;
@@ -28,7 +27,7 @@ void Celula::setY(int y0) {
 	y = y0;
 }
 
-char Celula::setCaract(char c0){
+void Celula::setCaract(char c0){
 	 c = c0;
 }
 
