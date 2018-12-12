@@ -72,6 +72,12 @@ void Consola::setTextColor(WORD color) {
 	return;
 }
 
+void Consola::SetColorAndBackground(int ForgC, int BackC){
+     WORD wColor = ((BackC & 0x0F) << 4) + (ForgC & 0x0F);
+     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), wColor);
+     return;
+}
+
 void Consola::setBackgroundColor(WORD color) {
 	CONSOLE_SCREEN_BUFFER_INFO csbi;
 	GetConsoleScreenBufferInfo(hconsola, &csbi);
@@ -194,7 +200,7 @@ void Consola::setTextSizeXP(int x, int y){
 //   o refresh da janela da consola n�o re-actualiza isto
 //   por esse motivo nao vale a pena optimizar certos aspectos destas fun��es
 // os alunos que gostarem de inform�tica podem pegar nisto
-//  e explorar e acrescentar 
+//  e explorar e acrescentar
 void Consola::drawLine(int x1, int y1, int x2, int y2, int cor){
 #ifdef _MSC_VER
 	HDC DrawHDC;

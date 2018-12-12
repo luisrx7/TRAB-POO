@@ -71,6 +71,15 @@ using namespace std;
 int main() {
 //	Consola c;  // Este objecto dá acesso à funcionalidade da consola. Basta um por programa
 
+	Consola::setBackgroundColor(Consola::PRETO);
+	Consola::clrscr();
+	Consola::getch();
+
+	Consola::SetColorAndBackground(Consola::PRETO,Consola::VERDE);
+	Consola::gotoxy(10, 10);
+	cout << "ez pz !";
+	Consola::getch();
+	exit(0);
 	Consola::setTextColor(Consola::VERDE_CLARO);
 	Consola::gotoxy(10, 10);
 	cout << "Este programa serve para demonstrar o que se pode fazer com";

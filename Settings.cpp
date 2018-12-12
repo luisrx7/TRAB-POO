@@ -12,7 +12,8 @@ Settings::Settings(){
 nlinhas=10;
 ncols=20;
 probpirata=0;
-
+soldadosport=0;
+preconavio=100;
 }
 
 int Settings::getLinhas() const{
@@ -25,6 +26,14 @@ int Settings::getColunas() const{
 
 int Settings::getProbpirata()const{
   return probpirata;
+}
+
+int Settings::getSoldadosPort()const{
+  return soldadosport;
+}
+
+int Settings::getPrecoNavio()const{
+  return preconavio;
 }
 
 void Settings::setLinhas(int linhas0)
@@ -48,4 +57,19 @@ void Settings::setProbpirata(int probpirata0)
 		probpirata0 = 20;}
 
 	probpirata = probpirata0;
+}
+
+void Settings::setSoldadosPort(int soldadosport0)
+{
+  if (soldadosport0 < 0){
+		soldadosport0 = 100;}
+
+	soldadosport = soldadosport0;
+}
+
+void Settings::setPrecoNavio(int preconavio0){
+	if (preconavio0 < 0){
+		preconavio0 = 100;
+	}
+	preconavio = preconavio0;
 }

@@ -1,22 +1,22 @@
 #include "Celula.h"
+#include <vector>
+#define LOT 100 //lotacao maxima
 
-#define LOT 100
-
-Celula::Celula(int x0, int y0, char c0):x(x0),y(y0), c(c0){
+Celula::Celula(int x0, int y0, char c0):x(x0),y(y0),c(c0){
 	switch (c) {
-	case '.': //mar
-    peixe = 1000;
-		lot = 1;
-		break;
-	case '+': //terra
-  peixe = 0;
-		lot = 0;
-		break;
-	default: //porto
-  peixe = 1000;
-		lot = LOT;
-		break;
-	}
+ case '.': //mar
+		peixe = 1000;
+	 lot = 1;
+	 break;
+ case '+': //terra
+	peixe = 0;
+	 lot = 0;
+	 break;
+ default: //porto
+	peixe = 1000;
+	 lot = LOT;
+	 break;
+ }
 }
 
 
@@ -29,6 +29,31 @@ void Celula::setY(int y0) {
 
 void Celula::setCaract(char c0){
 	 c = c0;
+}
+void Celula::addId(int id){
+	ids.push_back(id);
+}
+
+
+int Celula::getId()const{
+	return ids[0];
+}
+
+int Celula::getqntbarcos()const{
+	return ids.size();
+}
+
+
+void Celula::removeId(int id){
+	for(unsigned int i=0;i<ids.size();i++){
+		if(id== ids[i]){
+			ids.erase(ids.begin()+i);
+		}
+	}
+}
+
+vector<int> Celula::getidsNavios()const{
+	return ids;
 }
 
 int Celula::getX()const {

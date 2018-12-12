@@ -13,8 +13,6 @@ Dez 2016 - Exemplo melhorado.
 Nov 2018 - Pequenos melhoramentos nos coment�rios
 */
 
-
-
 #ifndef __CONSOLA_H__
 #define __CONSOLA_H__
 
@@ -80,6 +78,11 @@ public:
 	// Muda a c�r das letras
 	// - Os cout/cin seguintes usar�o essa c�r
 	static void setTextColor(WORD color);
+
+
+	// muda a cor de fundo e do texto
+	// tudo a seguir segue essa cor
+	static void SetColorAndBackground(int ForgC, int BackC);
 
 	// Muda a c�r de fundo
 	// - Os printf/cout seguintes usar�o essa c�r

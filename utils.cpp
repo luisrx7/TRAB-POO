@@ -54,9 +54,9 @@ vector <char> leFich(string nomeFich,Settings & defs,Jogador & p1){
      char char_array[tokens[0].length()+1];
      strcpy(char_array, tokens[0].c_str());
 
-   for (unsigned int i=0; i<tokens[0].length()+1; i++){
+   for (unsigned int i=0; i<tokens[0].length(); i++){
        dummy.push_back(char_array[i]);
-       cout << char_array[i];
+      // cout << char_array[i];
       }
       nx++;
     cout << endl;
@@ -68,6 +68,14 @@ vector <char> leFich(string nomeFich,Settings & defs,Jogador & p1){
     if(tokens[0]=="probpirata")
     {
       defs.setProbpirata(stoi(tokens[1]));
+    }
+    if(tokens[0]=="soldadosport")
+    {
+      defs.setSoldadosPort(stoi(tokens[1]));
+    }
+    if(tokens[0]=="preconavio")
+    {
+      defs.setPrecoNavio(stoi(tokens[1]));
     }
 
     str="";
