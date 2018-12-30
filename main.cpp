@@ -43,7 +43,7 @@ bool play=false,debug=false,continua=false;
 
 vector<string> tokens;
 while(1){
-	cout << "comando: ";
+	cout << "comando: (config init.txt)";
 	  string command;
 		getline (cin,command);
     istringstream iss(command);
