@@ -110,6 +110,6 @@ string Ship::getAsString2()const{
     " tripul: " << nsoldados <<
     "   V: " << velocidade <<
     "   T: "<< Tpeixe <<
-    "   A: "<< agua << endl;
+    "   A: "<< agua;
   		return oss.str();
 }
