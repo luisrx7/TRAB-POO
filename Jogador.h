@@ -15,7 +15,7 @@ public:
   char getTipoNavviaID(int id0)const;
   vector<Ship> getNavios()const;
 
-  void printNavios(int x, int y)const;
+  void printNavios()const;
 	void setMoedas(int moedas0);
   string getAsString() const;
 };

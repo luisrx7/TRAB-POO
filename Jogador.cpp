@@ -7,7 +7,6 @@
 #include <vector>
 #include "Jogador.h"
 #include "Ship.h"
-#include "consola.h"
 using namespace std;
 
 Jogador::Jogador(){
@@ -43,11 +42,9 @@ vector<Ship> Jogador::getNavios()const{
 	return Navios;
 }
 
-void Jogador::printNavios(int x,int y)const{
+void Jogador::printNavios()const{
   for(unsigned int i = 0;i<Navios.size();i++){
-		Consola::gotoxy(x,y);
     cout << Navios[i].getAsString2();
-		y++;
   }
 }
 

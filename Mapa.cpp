@@ -107,11 +107,9 @@ void Mapa::printPortos()const{
   }
 }
 
-
-
 void Mapa::printmapa()const{
   int x=0,y=0;
-  Consola::setScreenSize((colunas*2)+80,(linhas*2)+20);
+  Consola::setScreenSize((linhas*2)+20, (colunas*2)+10);
   Consola::SetColorAndBackground(Consola::BRANCO,Consola::PRETO);
   Consola::gotoxy(0,0);
   cout << p1.getAsString();
@@ -165,9 +163,8 @@ for( int j=1;j<=(linhas);j++){
     }
   }
 }
-Consola::SetColorAndBackground(Consola::BRANCO,Consola::PRETO); //texto  backgroud
-  p1.printNavios((colunas*2) + 5 ,2);
-  Consola::gotoxy(0,linhas*2+1);
+
+  Consola::SetColorAndBackground(Consola::BRANCO,Consola::PRETO); //texto  backgroud
 }
 
 int Mapa::getidNavioemCelulaXY(int x0,int y0)const{

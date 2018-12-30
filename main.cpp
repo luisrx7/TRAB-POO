@@ -52,22 +52,12 @@ while(1){
 				tokens.push_back(token);
         cout << token << endl;
     }
-		if (tokens[0] == "help"){
-				cout << "config <config file>" << endl;
-				cout << "debug" << endl;
-				cout << "exit" << endl;
-		}
     if (tokens[0] == "debug"){
         debug = true;
         cout << "debug ON" << endl;
     }
     if (tokens[0] == "config"){
         ajuda = leFich(tokens[1],defs,p1);
-        play = true;
-        break;
-    }
-		if (tokens[0] == "cd"){
-        ajuda = leFich("init.txt",defs,p1);
         play = true;
         break;
     }
@@ -110,17 +100,9 @@ if (play==true){
       /*  Consola::clrscr();
         map.printmapa();*/
       }
-			if (tokens[0] == "help"){
-					cout << "config <config file> -> ficheiro de definicoes do jogo" << endl;
-					cout << "compranav <tipo> -> compra navio do tipo especificado" << endl;
-					cout << "compranavdb <x> <y> <tipo> -> compra navio do tipo na pos x y" << endl;
-					cout << "prox -> avanca para proximo turno" << endl;
-					cout << "exit -> sai do jogo" << endl;
-			}
 	    if (tokens[0] == "config"){
 	        ajuda = leFich(tokens[1],defs,p1);
 	    }
-
 			if (tokens[0] == "prox"){
         defs.turnos++;
         for(unsigned int i=0;i<p1.Navios.size();i++){
@@ -243,18 +225,17 @@ if (play==true){
               int id = p1.compranav(pos[0],pos[1],c);
               p1.setMoedas((p1.getMoedas()-defs.getPrecoNavio()));
               map.addIdtoCelula(pos[0],pos[1],id);
-              //p1.printNavios((map.getColunas()*2) + 5,2);
-              //map.printIdCelula(pos[0],pos[1]);
-              //Consola::getch();
+              p1.printNavios();
+              map.printIdCelula(pos[0],pos[1]);
+              Consola::getch();
             }
           }
 
         }
         else{
           // moedas insuficientes;
-					cout << "erro na compra - moedas insuficientes";
         }
-	    }if (tokens[0] == "compranavdb"){ //compranavdb x y tipo
+	    }if (tokens[0] == "compranavdb"){
           int x=stoi(tokens[1]);
           int y=stoi(tokens[2]);
 
